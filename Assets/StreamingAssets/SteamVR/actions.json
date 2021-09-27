@@ -1,0 +1,111 @@
+{
+  "actions": [
+    {
+      "name": "/actions/interaction_framework/in/Teleport",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/interaction_framework/in/Pose",
+      "type": "pose",
+      "requirement": "mandatory"
+    },
+    {
+      "name": "/actions/interaction_framework/in/InteractUI",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/interaction_framework/in/Grab",
+      "type": "boolean",
+      "requirement": "mandatory"
+    },
+    {
+      "name": "/actions/interaction_framework/in/Use",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/interaction_framework/in/TouchpadPos",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/interaction_framework/in/Squeeze",
+      "type": "vector1"
+    },
+    {
+      "name": "/actions/interaction_framework/out/Haptic",
+      "type": "vibration"
+    }
+  ],
+  "action_sets": [
+    {
+      "name": "/actions/interaction_framework",
+      "usage": "single"
+    }
+  ],
+  "default_bindings": [
+    {
+      "controller_type": "vive_controller",
+      "binding_url": "bindings_vive_controller.json"
+    },
+    {
+      "controller_type": "oculus_touch",
+      "binding_url": "bindings_oculus_touch.json"
+    },
+    {
+      "controller_type": "knuckles",
+      "binding_url": "bindings_knuckles.json"
+    },
+    {
+      "controller_type": "holographic_controller",
+      "binding_url": "bindings_holographic_controller.json"
+    },
+    {
+      "controller_type": "vive_cosmos_controller",
+      "binding_url": "bindings_vive_cosmos_controller.json"
+    },
+    {
+      "controller_type": "logitech_stylus",
+      "binding_url": "bindings_logitech_stylus.json"
+    },
+    {
+      "controller_type": "vive_cosmos",
+      "binding_url": "binding_vive_cosmos.json"
+    },
+    {
+      "controller_type": "vive",
+      "binding_url": "binding_vive.json"
+    },
+    {
+      "controller_type": "indexhmd",
+      "binding_url": "binding_index_hmd.json"
+    },
+    {
+      "controller_type": "vive_pro",
+      "binding_url": "binding_vive_pro.json"
+    },
+    {
+      "controller_type": "rift",
+      "binding_url": "binding_rift.json"
+    },
+    {
+      "controller_type": "holographic_hmd",
+      "binding_url": "binding_holographic_hmd.json"
+    },
+    {
+      "controller_type": "vive_tracker_camera",
+      "binding_url": "binding_vive_tracker_camera.json"
+    }
+  ],
+  "localization": [
+    {
+      "language_tag": "en_US",
+      "/actions/interaction_framework/in/Teleport": "Teleport",
+      "/actions/interaction_framework/in/Pose": "Pose",
+      "/actions/interaction_framework/in/InteractUI": "Interact with UI",
+      "/actions/interaction_framework/in/Grab": "Grab Objects",
+      "/actions/interaction_framework/in/Use": "Use Object",
+      "/actions/interaction_framework/in/TouchpadPos": "Touchpad/Joystick Position",
+      "/actions/interaction_framework/in/Squeeze": "Trigger Squeeze",
+      "/actions/interaction_framework/out/Haptic": "Haptics"
+    }
+  ]
+}
