@@ -72,7 +72,7 @@ namespace VRFramework
 
             // Get the controllerinput component from the gameObject and set it up
             Input = gameObject.GetComponent<VrControllerInput>();
-            Input.Setup();
+            Input.Setup(this);
         }
 
         public void Process()
