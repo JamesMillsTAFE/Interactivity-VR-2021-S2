@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
@@ -24,6 +22,10 @@ namespace VRFramework.Interactions
         public bool canUse = false;
         public SteamVR_Input_Sources allowedUseControllers = SteamVR_Input_Sources.Any;
 
+        // This is the set of events that will fire when this object is either picked up or dropped
+        public InteractionEvent onGrabbed = new InteractionEvent();
+        public InteractionEvent onReleased = new InteractionEvent();
+
         private new Rigidbody rigidbody;
         private new Collider collider;
 
@@ -39,10 +41,16 @@ namespace VRFramework.Interactions
                 collider = gameObject.AddComponent<BoxCollider>();
         }
 
-        // Update is called once per frame
-        void Update()
+        // Called when the controller triggers the grab action
+        public void OnObjectGrabbed(InteractEventData _data)
         {
+            onGrabbed.Invoke(_data);
+        }
 
+        // Called when the controller triggers the drop action
+        public void OnObjectReleased(InteractEventData _data)
+        {
+            onReleased.Invoke(_data);
         }
     } 
 }
