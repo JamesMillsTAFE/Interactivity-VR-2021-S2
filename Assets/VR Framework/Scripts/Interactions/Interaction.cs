@@ -45,5 +45,29 @@ namespace VRFramework.Interactions
                     (_snapHandle.position - interactingObject.transform.position);
             }
         }
+
+        protected void SetCollidingObject(Collider _collider)
+        {
+            // Check that there is either an object already colliding with the controller or no InteractableObject
+            // script on the colliding object.
+            InteractableObject interactable = _collider.GetComponent<InteractableObject>();
+            if (interactingObject != null || interactable == null)
+                return;
+
+            // Check that the InteractableObject can actually be interacted with
+            if (!CanInteract(interactable))
+                return;
+
+            // We can interact with this object so store it
+            interactingObject = interactable;
+        }
+
+        protected abstract bool CanInteract(InteractableObject _interactable);
+
+        // This function allows us to make the controller visible or not when interacting with something.
+        protected void SetControllerVisibility(bool _visible)
+        {
+
+        }
     } 
 }

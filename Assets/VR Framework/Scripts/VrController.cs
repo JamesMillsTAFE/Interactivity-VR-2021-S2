@@ -51,6 +51,8 @@ namespace VRFramework
             private set;
         }
 
+        public GameObject controllerModel;
+
         public void Setup()
         {
             // Get the rigidbody component from the gameobject
@@ -73,6 +75,14 @@ namespace VRFramework
             // Get the controllerinput component from the gameObject and set it up
             Input = gameObject.GetComponent<VrControllerInput>();
             Input.Setup(this);
+
+            // If there is no controller model set, create a small cube
+            if(controllerModel == null)
+            {
+                controllerModel = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                controllerModel.transform.SetParent(transform);
+                controllerModel.transform.localScale = Vector3.one * 0.25f;
+            }
         }
 
         public void Process()
