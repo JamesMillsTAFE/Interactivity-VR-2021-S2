@@ -46,20 +46,21 @@ namespace VRFramework.Interactions
             }
         }
 
-        protected void SetCollidingObject(Collider _collider)
+        protected bool SetCollidingObject(Collider _collider)
         {
             // Check that there is either an object already colliding with the controller or no InteractableObject
             // script on the colliding object.
             InteractableObject interactable = _collider.GetComponent<InteractableObject>();
             if (interactingObject != null || interactable == null)
-                return;
+                return false;
 
             // Check that the InteractableObject can actually be interacted with
             if (!CanInteract(interactable))
-                return;
+                return false;
 
             // We can interact with this object so store it
             interactingObject = interactable;
+            return true;
         }
 
         protected abstract bool CanInteract(InteractableObject _interactable);
@@ -67,7 +68,42 @@ namespace VRFramework.Interactions
         // This function allows us to make the controller visible or not when interacting with something.
         protected void SetControllerVisibility(bool _visible)
         {
+            controller.controllerModel.SetActive(_visible);
+        }
 
+        // Gives us an easy way to generate interaction data for events
+        protected InteractEventData GenerateData(Collider _collider, InteractEventData.Interaction _interaction)
+        {
+            return new InteractEventData(interactingObject, controller, _collider, _collider.GetComponent<Rigidbody>(), _interaction);
+        }
+
+        protected virtual void OnObjectTouched() { }
+        protected virtual void OnObjectUntouched() { }
+
+        // OnTriggerEnter is called when the Collider other enters the trigger
+        private void OnTriggerEnter(Collider _other)
+        {
+            if (SetCollidingObject(_other))
+            {
+                OnObjectTouched();
+            }
+        }
+
+        // OnTriggerExit is called when the Collider other has stopped touching the trigger
+        private void OnTriggerExit(Collider _other)
+        {
+            // If the object isn't set, there is no point in changing it
+            if (interactingObject == null)
+                return;
+
+            interactingObject = null;
+            OnObjectUntouched();
+        }
+
+        // OnTriggerStay is called once per frame for every Collider other that is touching the trigger
+        private void OnTriggerStay(Collider _other)
+        {
+            SetCollidingObject(_other);
         }
     } 
 }

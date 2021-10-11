@@ -13,7 +13,8 @@ namespace VRFramework.Interactions
     {
         public enum Interaction
         {
-            Touch
+            Touch,
+            Grab
         }
 
         // The object being interacted with

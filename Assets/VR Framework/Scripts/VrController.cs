@@ -2,6 +2,8 @@ using UnityEngine;
 using VRFramework.Input;
 using Valve.VR;
 
+using VRFramework.Interactions;
+
 namespace VRFramework
 {
     [RequireComponent(typeof(Rigidbody))]
@@ -83,6 +85,11 @@ namespace VRFramework
                 controllerModel.transform.SetParent(transform);
                 controllerModel.transform.localScale = Vector3.one * 0.25f;
             }
+
+            // Try and get the GrabInteraction script and set it up if it's found
+            GrabInteraction grab = gameObject.GetComponent<GrabInteraction>();
+            if (grab != null)
+                grab.Setup(this);
         }
 
         public void Process()

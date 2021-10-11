@@ -22,9 +22,14 @@ namespace VRFramework.Interactions
         public bool canUse = false;
         public SteamVR_Input_Sources allowedUseControllers = SteamVR_Input_Sources.Any;
 
+        public Transform snapHandle;
+
         // This is the set of events that will fire when this object is either picked up or dropped
         public InteractionEvent onGrabbed = new InteractionEvent();
         public InteractionEvent onReleased = new InteractionEvent();
+
+        public Collider Collider { get { return collider; } }
+        public Rigidbody Rigidbody { get { return rigidbody; } }
 
         private new Rigidbody rigidbody;
         private new Collider collider;
