@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
+using VRFramework.Locomotion;
+
 namespace VRFramework
 {
     public class VrRig : MonoBehaviour
@@ -15,6 +17,11 @@ namespace VRFramework
         private VrController right;
 
         private static VrRig instance = null;
+
+        public static Transform GetPlayArea()
+        {
+            return instance.transform;
+        }
 
         /// <summary>
         /// Attempts to get the transform for the passed source that is being tracked by our system.
@@ -77,6 +84,11 @@ namespace VRFramework
             // Setup the two controller components
             left.Setup();
             right.Setup();
+
+            // Try and get the Teleport component from the VrRig GameObject
+            Teleporter teleport = gameObject.GetComponent<Teleporter>();
+            if (teleport != null)
+                teleport.Setup(left.Input, right.Input);
         }
 
         // Update is called once per frame

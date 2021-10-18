@@ -3,6 +3,7 @@ using VRFramework.Input;
 using Valve.VR;
 
 using VRFramework.Interactions;
+using VRFramework.Pointers;
 
 namespace VRFramework
 {
@@ -24,6 +25,12 @@ namespace VRFramework
         }
 
         public Collider Collider
+        {
+            get;
+            private set;
+        }
+
+        public Pointer Pointer
         {
             get;
             private set;
@@ -77,6 +84,11 @@ namespace VRFramework
             // Get the controllerinput component from the gameObject and set it up
             Input = gameObject.GetComponent<VrControllerInput>();
             Input.Setup(this);
+
+            // Try and get the pointer component from the gameObject and set it up
+            Pointer = gameObject.GetComponent<Pointer>();
+            if(Pointer != null)
+                Pointer.Setup(Input);
 
             // If there is no controller model set, create a small cube
             if(controllerModel == null)
