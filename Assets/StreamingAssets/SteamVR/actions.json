@@ -31,6 +31,10 @@
       "type": "vector1"
     },
     {
+      "name": "/actions/interaction_framework/in/Pointer",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/interaction_framework/out/Haptic",
       "type": "vibration"
     }
@@ -105,7 +109,8 @@
       "/actions/interaction_framework/in/Use": "Use Object",
       "/actions/interaction_framework/in/TouchpadPos": "Touchpad/Joystick Position",
       "/actions/interaction_framework/in/Squeeze": "Trigger Squeeze",
-      "/actions/interaction_framework/out/Haptic": "Haptics"
+      "/actions/interaction_framework/out/Haptic": "Haptics",
+      "/actions/interaction_framework/in/Pointer": "Laser Pointer"
     }
   ]
 }

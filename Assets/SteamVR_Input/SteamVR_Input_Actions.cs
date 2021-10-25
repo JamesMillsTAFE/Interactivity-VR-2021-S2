@@ -31,6 +31,8 @@ namespace Valve.VR
         
         private static SteamVR_Action_Single p_interaction_framework_Squeeze;
         
+        private static SteamVR_Action_Boolean p_interaction_framework_Pointer;
+        
         private static SteamVR_Action_Vibration p_interaction_framework_Haptic;
         
         public static SteamVR_Action_Boolean interaction_framework_Teleport
@@ -89,6 +91,14 @@ namespace Valve.VR
             }
         }
         
+        public static SteamVR_Action_Boolean interaction_framework_Pointer
+        {
+            get
+            {
+                return SteamVR_Actions.p_interaction_framework_Pointer.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
         public static SteamVR_Action_Vibration interaction_framework_Haptic
         {
             get
@@ -107,6 +117,7 @@ namespace Valve.VR
                     SteamVR_Actions.interaction_framework_Use,
                     SteamVR_Actions.interaction_framework_TouchpadPos,
                     SteamVR_Actions.interaction_framework_Squeeze,
+                    SteamVR_Actions.interaction_framework_Pointer,
                     SteamVR_Actions.interaction_framework_Haptic};
             Valve.VR.SteamVR_Input.actionsIn = new Valve.VR.ISteamVR_Action_In[] {
                     SteamVR_Actions.interaction_framework_Teleport,
@@ -115,7 +126,8 @@ namespace Valve.VR
                     SteamVR_Actions.interaction_framework_Grab,
                     SteamVR_Actions.interaction_framework_Use,
                     SteamVR_Actions.interaction_framework_TouchpadPos,
-                    SteamVR_Actions.interaction_framework_Squeeze};
+                    SteamVR_Actions.interaction_framework_Squeeze,
+                    SteamVR_Actions.interaction_framework_Pointer};
             Valve.VR.SteamVR_Input.actionsOut = new Valve.VR.ISteamVR_Action_Out[] {
                     SteamVR_Actions.interaction_framework_Haptic};
             Valve.VR.SteamVR_Input.actionsVibration = new Valve.VR.SteamVR_Action_Vibration[] {
@@ -126,7 +138,8 @@ namespace Valve.VR
                     SteamVR_Actions.interaction_framework_Teleport,
                     SteamVR_Actions.interaction_framework_InteractUI,
                     SteamVR_Actions.interaction_framework_Grab,
-                    SteamVR_Actions.interaction_framework_Use};
+                    SteamVR_Actions.interaction_framework_Use,
+                    SteamVR_Actions.interaction_framework_Pointer};
             Valve.VR.SteamVR_Input.actionsSingle = new Valve.VR.SteamVR_Action_Single[] {
                     SteamVR_Actions.interaction_framework_Squeeze};
             Valve.VR.SteamVR_Input.actionsVector2 = new Valve.VR.SteamVR_Action_Vector2[] {
@@ -139,7 +152,8 @@ namespace Valve.VR
                     SteamVR_Actions.interaction_framework_Grab,
                     SteamVR_Actions.interaction_framework_Use,
                     SteamVR_Actions.interaction_framework_TouchpadPos,
-                    SteamVR_Actions.interaction_framework_Squeeze};
+                    SteamVR_Actions.interaction_framework_Squeeze,
+                    SteamVR_Actions.interaction_framework_Pointer};
         }
         
         private static void PreInitActions()
@@ -151,6 +165,7 @@ namespace Valve.VR
             SteamVR_Actions.p_interaction_framework_Use = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/interaction_framework/in/Use")));
             SteamVR_Actions.p_interaction_framework_TouchpadPos = ((SteamVR_Action_Vector2)(SteamVR_Action.Create<SteamVR_Action_Vector2>("/actions/interaction_framework/in/TouchpadPos")));
             SteamVR_Actions.p_interaction_framework_Squeeze = ((SteamVR_Action_Single)(SteamVR_Action.Create<SteamVR_Action_Single>("/actions/interaction_framework/in/Squeeze")));
+            SteamVR_Actions.p_interaction_framework_Pointer = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/interaction_framework/in/Pointer")));
             SteamVR_Actions.p_interaction_framework_Haptic = ((SteamVR_Action_Vibration)(SteamVR_Action.Create<SteamVR_Action_Vibration>("/actions/interaction_framework/out/Haptic")));
         }
     }

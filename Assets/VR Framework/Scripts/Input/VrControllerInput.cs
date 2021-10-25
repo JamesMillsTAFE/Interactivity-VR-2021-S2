@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
+using VRFramework.UI;
+
 namespace VRFramework.Input
 {
     public class VrControllerInput : MonoBehaviour
@@ -12,7 +14,13 @@ namespace VRFramework.Input
         public bool IsUsePressed { get; private set; } = false;
         public bool IsPointerPressed { get; private set; } = false;
         public bool IsTeleportPressed { get; private set; } = false;
+        public bool IsInteractUIDown { get { return interactUIAction.GetStateDown(controller.Source); } }
+        public bool IsInteractUIUp { get { return interactUIAction.GetStateUp(controller.Source); } }
         public Vector2 TouchpadAxis { get; private set; } = Vector2.zero;
+
+        [Header("Input Settings")]
+        [Tooltip("This determines if we can interact with UI elements using this controller.")]
+        public bool canInteractUI = true;
 
         [Header("SteamVR Input Actions")]
         // These are the input actions that steam will send when the relevant buttons on the controller
@@ -23,6 +31,7 @@ namespace VRFramework.Input
         [SerializeField] private SteamVR_Action_Boolean useAction;
         [SerializeField] private SteamVR_Action_Boolean pointerAction;
         [SerializeField] private SteamVR_Action_Boolean teleportAction;
+        [SerializeField] private SteamVR_Action_Boolean interactUIAction;
         [SerializeField] private SteamVR_Action_Vector2 touchpadPosAction;
 
         [Header("Unity Input Actions")]
@@ -35,6 +44,8 @@ namespace VRFramework.Input
         public VrInputEvent onPointerReleased = new VrInputEvent();
         public VrInputEvent onTeleportPressed = new VrInputEvent();
         public VrInputEvent onTeleportReleased = new VrInputEvent();
+        public VrInputEvent onInteractUIPressed = new VrInputEvent();
+        public VrInputEvent onInteractUIReleased = new VrInputEvent();
         public VrInputEvent onTouchpadPosChanged = new VrInputEvent();
 
         private VrController controller;
@@ -79,6 +90,16 @@ namespace VRFramework.Input
             onTeleportReleased.Invoke(new VrInputActionData(controller, controller.Collider, controller.Rigidbody, touchpadPosAction.axis));
         }
 
+        private void OnInteractUIPressed(SteamVR_Action_Boolean _data, SteamVR_Input_Sources _source)
+        {
+            onInteractUIPressed.Invoke(new VrInputActionData(controller, controller.Collider, controller.Rigidbody, touchpadPosAction.axis));
+        }
+
+        private void OnInteractUIReleased(SteamVR_Action_Boolean _data, SteamVR_Input_Sources _source)
+        {
+            onInteractUIReleased.Invoke(new VrInputActionData(controller, controller.Collider, controller.Rigidbody, touchpadPosAction.axis));
+        }
+
         // Axis is the current position of the touchpad whereas Delta is the amount it changed between calls
         private void OnTouchpadPosChanged(SteamVR_Action_Vector2 _data, SteamVR_Input_Sources _source, Vector2 _axis, Vector2 _delta)
         {
@@ -102,6 +123,9 @@ namespace VRFramework.Input
             teleportAction.AddOnStateDownListener(OnTeleportPressed, controller.Source);
             teleportAction.AddOnStateUpListener(OnTeleportReleased, controller.Source);
 
+            interactUIAction.AddOnStateDownListener(OnInteractUIPressed, controller.Source);
+            interactUIAction.AddOnStateUpListener(OnInteractUIReleased, controller.Source);
+
             touchpadPosAction.AddOnChangeListener(OnTouchpadPosChanged, controller.Source);
         }
 
@@ -113,6 +137,19 @@ namespace VRFramework.Input
             IsPointerPressed = pointerAction.state;
             IsTeleportPressed = teleportAction.state;
             TouchpadAxis = touchpadPosAction.axis;
+
+            // Handle the state of if the controller can interact with the UI or not
+            if(VrInputModule.instance != null)
+            {
+                if(canInteractUI)
+                {
+                    VrInputModule.instance.AddController(this);
+                }
+                else
+                {
+                    VrInputModule.instance.RemoveController(this);
+                }
+            }
         }
     } 
 }

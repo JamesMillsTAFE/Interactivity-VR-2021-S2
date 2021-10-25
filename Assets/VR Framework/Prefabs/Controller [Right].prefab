@@ -629,6 +629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ce100a6fbd7e7419ba9f4685930dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteractUI: 1
   grabAction:
     actionPath: /actions/interaction_framework/in/Grab
     needsReinit: 0
@@ -636,10 +637,13 @@ MonoBehaviour:
     actionPath: /actions/interaction_framework/in/Use
     needsReinit: 0
   pointerAction:
-    actionPath: 
+    actionPath: /actions/interaction_framework/in/Pointer
     needsReinit: 0
   teleportAction:
     actionPath: /actions/interaction_framework/in/Teleport
+    needsReinit: 0
+  interactUIAction:
+    actionPath: /actions/interaction_framework/in/InteractUI
     needsReinit: 0
   touchpadPosAction:
     actionPath: /actions/interaction_framework/in/TouchpadPos
@@ -666,6 +670,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onTeleportReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  onInteractUIPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  onInteractUIReleased:
     m_PersistentCalls:
       m_Calls: []
   onTouchpadPosChanged:

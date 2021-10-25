@@ -73,6 +73,14 @@ namespace Valve.VR
             }
         }
         
+        public virtual SteamVR_Action_Boolean Pointer
+        {
+            get
+            {
+                return SteamVR_Actions.interaction_framework_Pointer;
+            }
+        }
+        
         public virtual SteamVR_Action_Vibration Haptic
         {
             get
