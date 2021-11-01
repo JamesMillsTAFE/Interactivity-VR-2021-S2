@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
-
 using VRFramework.UI;
 
 namespace VRFramework.Input
@@ -14,6 +11,7 @@ namespace VRFramework.Input
         public bool IsUsePressed { get; private set; } = false;
         public bool IsPointerPressed { get; private set; } = false;
         public bool IsTeleportPressed { get; private set; } = false;
+        public bool IsInteractUIPressed { get; private set; } = false;
         public bool IsInteractUIDown { get { return interactUIAction.GetStateDown(controller.Source); } }
         public bool IsInteractUIUp { get { return interactUIAction.GetStateUp(controller.Source); } }
         public Vector2 TouchpadAxis { get; private set; } = Vector2.zero;
@@ -118,7 +116,7 @@ namespace VRFramework.Input
             useAction.AddOnStateUpListener(OnUseReleased, controller.Source);
 
             pointerAction.AddOnStateDownListener(OnPointerPressed, controller.Source);
-            pointerAction.AddOnStateUpListener(OnPointerPressed, controller.Source);
+            pointerAction.AddOnStateUpListener(OnPointerReleased, controller.Source);
 
             teleportAction.AddOnStateDownListener(OnTeleportPressed, controller.Source);
             teleportAction.AddOnStateUpListener(OnTeleportReleased, controller.Source);
@@ -136,6 +134,7 @@ namespace VRFramework.Input
             IsUsePressed = useAction.state;
             IsPointerPressed = pointerAction.state;
             IsTeleportPressed = teleportAction.state;
+            IsInteractUIPressed = interactUIAction.state;
             TouchpadAxis = touchpadPosAction.axis;
 
             // Handle the state of if the controller can interact with the UI or not
