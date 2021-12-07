@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="743695fd-feb0-4fd6-96ed-1af2ca6ff7a9" name="Changes" comment="" />
+    <list default="true" id="743695fd-feb0-4fd6-96ed-1af2ca6ff7a9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_Integration/IK Jobs (Unity 2018.2.4f1).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_Integration/IK Jobs (Unity 2019.3).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_Integration/Oculus (Unity 2017.4.28f1, Oculus Integration v1.37).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_Integration/Playmaker (Unity 2017.4.28f1, PlayMaker 1.9.0).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_Integration/ReadyPlayerMe (Unity 2018.4.28f1, Oculus Integration).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_Integration/Steam VR (Unity 2017.4.28f1, SteamVR Plugin v2.6.1).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_Integration/UMA (Unity 2017.4.28f1, UMA 2.8.1).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_Integration/VRIK Movement Animset Pro.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_Integration/VRIK Photon Demo (Unity 2017.4.28f1, Oculus Integration, PUN 1.103).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_Integration/VRIK Photon2 Demo (Unity 2017.4.28f1, Oculus or SteamVR Integration, PUN 2.20.2).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Import Assembly Definitions.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Resources/Resources/SteamVR_Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR_Resources/Resources/SteamVR_Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Resources/Resources/SteamVR_Settings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR_Resources/Resources/SteamVR_Settings.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VR Framework/Scripts/Interactions/InteractEventData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VR Framework/Scripts/Interactions/InteractEventData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.learn.iet-framework/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.learn.iet-framework/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/PointerInputModule.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/Archive/Assets/Scripts/UpdateUnityChanRest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/VR Framework/Scripts/Extras/CurvedUIRayProcessor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/Archive/Assets/Scripts/CustomPlaneManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20IO0K9lW4EPZv68Wet3ePe5CLP" />
   <component name="ProjectViewState">
@@ -22,6 +40,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -47,6 +66,18 @@
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="743695fd-feb0-4fd6-96ed-1af2ca6ff7a9" name="Changes" comment="" />
+      <created>1638839929442</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638839929442</updated>
+      <workItem from="1638839932716" duration="304000" />
+    </task>
+    <servers />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
